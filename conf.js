@@ -12,8 +12,8 @@ exports.config = {
 
   // Spec patterns are relative to the current working directory when
   // protractor is called.
-  specs: ['Tests/pTest.js','Tests/qaTest.js','Tests/cssTest'],
-  //specs: ['cssTest.js'],
+  //specs: ['Tests/pTest.js','Tests/qaTest.js','Tests/cssTest','Tests/pageTest'],
+  specs: ['Tests/pageTest.js'],
   // Options to be passed to Jasmine.
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
