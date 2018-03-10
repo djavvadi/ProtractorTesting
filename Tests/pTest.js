@@ -1,3 +1,6 @@
+//Completely for learning purposes
+//This progral is about to describe the protractor test supported by web site called www.protracto.org
+//please contact for more queries on djavvadi@hotmail.com
 describe('angularjs homepage', function() {
   it('should greet the named user', function() {
     browser.get('http://www.angularjs.org');

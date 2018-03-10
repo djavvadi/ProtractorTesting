@@ -2,16 +2,21 @@
 //This progral is about to describe the protractor test supported by web site called www.testroom.com/jswebapp
 //please contact for more queries on djavvadi@hotmail.com
 describe('Protractor test', function() {
-  it('Verify Home page', function() {
-    browser.get('http://www.thetestroom.com/jswebapp/');
+  
+  beforeEach(function(){
+    browser.get('http://www.thetestroom.com/jswebapp/'); 
+  });
+
+  afterEach(function(){
+    console.log("Test Completed");    
+  });
+
+  it('Verify Home page', function() {    
     expect(browser.getCurrentUrl()).toContain("jswebapp")
-    
   });   
 
   it('verify ng text', function() {    
     var textMsg = "Hello Everyone, I am running protractor test";
-
-
     element(by.model('person.name')).sendKeys(textMsg);
     element(by.binding('person.name')).getText().then(function(text){
       expect(textMsg).toEqual(text);
@@ -32,7 +37,9 @@ describe('Protractor test', function() {
     //expect("test string").toContain("Thank you")
   });  
 
-  it('verify Thank you page', function() {    
+  it('verify Thank you page', function() {   
+    element(by.buttonText('CONTINUE')).click();
+    element(by.buttonText('CONTINUE')).click(); 
     element.all(by.css(".title")).getText().then(function(text){
       expect(text).toContain("Thank you")
     });     
